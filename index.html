@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sang Thu - Hữu Thỉnh</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f8f3e8;
+            color: #46513b;
+            line-height: 1.8;
+            transition: 0.5s;
+        }
+
+        /* Phần đầu trang */
+        header {
+            min-height: 420px;
+            background:
+                linear-gradient(rgba(35,45,25,0.35),
+                rgba(35,45,25,0.55)),
+                url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1600")
+                center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 30px 15px;
+        }
+
+        header h1 {
+            font-size: 58px;
+            letter-spacing: 5px;
+            color: #fff3c4;
+            text-shadow: 2px 3px 8px #333;
+            animation: hienlen 2s ease;
+        }
+
+        header p {
+            font-size: 22px;
+            font-style: italic;
+            margin-top: 12px;
+            animation: hienlen 3s ease;
+        }
+
+        /* Nội dung chính */
+        .container {
+            max-width: 950px;
+            margin: 45px auto;
+            padding: 25px;
+        }
+
+        .gioithieu {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .gioithieu h2 {
+            color: #a36b32;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .gioithieu p {
+            font-size: 18px;
+        }
+
+        /* Hình ảnh minh họa */
+        .anh {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px #b7aa91;
+            margin: 20px 0 35px;
+        }
+
+        /* Khung bài thơ */
+        .baitho {
+            background: #fffdf6;
+            border: 2px solid #dfc99c;
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px #d9ceb8;
+        }
+
+        .baitho h2 {
+            color: #9a6332;
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .kho tho {
+            margin-bottom: 25px;
+        }
+
+        .kho {
+            font-size: 20px;
+            font-style: italic;
+            margin-bottom: 25px;
+            color: #526044;
+        }
+
+        .kho p {
+            margin: 3px 0;
+        }
+
+        /* Phần cảm nhận */
+        .camnhan {
+            margin-top: 40px;
+            background: #e9eddf;
+            padding: 30px;
+            border-left: 6px solid #a67c43;
+border-radius: 12px;
+        }
+
+        .camnhan h2 {
+            color: #8c6136;
+            margin-bottom: 12px;
+        }
+
+        .camnhan p {
+            font-size: 17px;
+            text-align: justify;
+        }
+
+        /* Nút đổi màu */
+        button {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #a67c43;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #6c7952;
+            transform: scale(1.08);
+        }
+
+        /* Chân trang */
+        footer {
+            background: #59654a;
+            color: white;
+            text-align: center;
+            padding: 22px;
+            font-size: 15px;
+        }
+
+        /* Hiệu ứng xuất hiện */
+        @keyframes hienlen {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Lá thu rơi */
+        .la {
+            position: fixed;
+            top: -30px;
+            color: #bd843d;
+            font-size: 22px;
+            pointer-events: none;
+            z-index: 10;
+            animation: roila 8s linear infinite;
+        }
+
+        @keyframes roila {
+            0% {
+                transform: translateY(-20px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Chế độ nền tối */
+        .dark {
+            background: #252d25;
+            color: #f4e9d1;
+        }
+
+        .dark .baitho {
+            background: #354236;
+            border-color: #a67c43;
+        }
+
+        .dark .kho {
+            color: #f2e5c8;
+        }
+
+        .dark .camnhan {
+            background: #39483b;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 40px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .baitho {
+                padding: 25px 10px;
+            }
+
+            .kho {
+                font-size: 17px;
+            }
+
+            .anh {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>SANG THU</h1>
+        <p>Tác giả: Hữu Thỉnh</p>
+        <p>Một chút giao mùa – Một chút vấn vương</p>
+    </header>
+
+    <div class="container">
+
+        <section class="gioithieu">
+            <h2>🍂 Khoảnh khắc giao mùa</h2>
+            <p>
+                Sang thu là bài thơ thể hiện những cảm nhận tinh tế
+của nhà thơ Hữu Thỉnh trước vẻ đẹp thiên nhiên
+                trong thời khắc chuyển giao từ hạ sang thu.
+            </p>
+        </section>
+
+        <img class="anh"
+        src="https://images.unsplash.com/photo-1507371341162-763b5e419408?w=1200"
+        alt="Khung cảnh mùa thu với hàng cây lá vàng">
+
+        <section class="baitho">
+            <h2>🍁 SANG THU 🍁</h2>
+
+            <div class="kho">
+                <p>Bỗng nhận ra hương ổi</p>
+                <p>Phả vào trong gió se</p>
+                <p>Sương chùng chình qua ngõ</p>
+                <p>Hình như thu đã về</p>
+            </div>
+
+            <div class="kho">
+                <p>Sông được lúc dềnh dàng</p>
+                <p>Chim bắt đầu vội vã</p>
+                <p>Có đám mây mùa hạ</p>
+                <p>Vắt nửa mình sang thu</p>
+            </div>
+
+            <div class="kho">
+                <p>Vẫn còn bao nhiêu nắng</p>
+                <p>Đã vơi dần cơn mưa</p>
+                <p>Sấm cũng bớt bất ngờ</p>
+                <p>Trên hàng cây đứng tuổi</p>
+            </div>
+        </section>
+
+        <section class="camnhan">
+            <h2>🌿 Cảm nhận về bài thơ</h2>
+            <p>
+                Bằng những hình ảnh gần gũi, ngôn ngữ giản dị
+                và cảm nhận tinh tế, Hữu Thỉnh đã tái hiện
+                khoảnh khắc giao mùa từ hạ sang thu một cách
+                nhẹ nhàng và sâu lắng. Bài thơ không chỉ thể hiện
+                vẻ đẹp của thiên nhiên mà còn gợi lên những suy
+                ngẫm về cuộc đời và sự trưởng thành của con người.
+            </p>
+        </section>
+
+        <button onclick="doiNen()">
+            🌙 Chuyển đổi giao diện
+        </button>
+
+    </div>
+
+    <footer>
+        <p>Thiết kế trang web: Bài thơ Sang Thu – Hữu Thỉnh</p>
+        <p>Chủ đề: Văn học Việt Nam 🍂</p>
+    </footer>
+
+    <script>
+        // Chuyển đổi nền sáng và tối
+        function doiNen() {
+            document.body.classList.toggle("dark");
+        }
+
+        // Tạo hiệu ứng lá thu rơi
+        function taoLa() {
+            const la = document.createElement("div");
+
+            la.className = "la";
+            la.innerHTML = "🍂";
+
+            la.style.left = Math.random() * 100 + "vw";
+            la.style.animationDuration =
+                (5 + Math.random() * 5) + "s";
+
+            la.style.fontSize =
+                (15 + Math.random() * 15) + "px";
+
+            document.body.appendChild(la);
+
+            setTimeout(function() {
+                la.remove();
+            }, 10000);
+        }
+
+        setInterval(taoLa, 800);
+    </script>
+
+</body>
+</html>
